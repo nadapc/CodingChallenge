@@ -37,7 +37,7 @@ public class Activity_01_Trending_repo extends AppCompatActivity {
     private ListView lv_repo;
     private ArrayList<Element_Repo> listRepos;
     private Adapter_trendingRepos adapterListTrend;
-    private int pageNumber = 0;
+    private int pageNumber = 1;
     private boolean loadingMore = false;
     private View loadMoreView;
 
@@ -69,33 +69,29 @@ public class Activity_01_Trending_repo extends AppCompatActivity {
 
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                currentScrollState = scrollState;
-
-                if (currentVisibleItemCount > 0 && currentScrollState == SCROLL_STATE_IDLE) {
-                    if(!loadingMore){
-                        loadingMore=true;
-                        mytrendingRepo.getReposList(pageNumber);
-                        pageNumber++;
-                        lv_repo.addFooterView(loadMoreView);
-
-                    }
-
-                }
             }
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem,
                                  int visibleItemCount, int totalItemCount) {
-                currentVisibleItemCount = visibleItemCount;
+                //Chargement data a la fin du scroll
+                int lastInScreen = firstVisibleItem + visibleItemCount;
+                if((lastInScreen == totalItemCount) && !(loadingMore) ){
+                    if( lastInScreen != 0){
+                        loadingMore=true;
+                        mytrendingRepo.getReposList(pageNumber);
+                        pageNumber++;
+                        lv_repo.addFooterView(loadMoreView);
+                    }
+
+                }
+
             }
         });
 
         //Recuperation de la date depuis la bdd
         getDataRepos();
 
-        //Recuperation de la data depuis l api
-        mytrendingRepo.getReposList(pageNumber);
-        pageNumber++;
     }
 
 

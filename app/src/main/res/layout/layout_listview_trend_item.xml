@@ -30,6 +30,8 @@
         android:lines="2"
         android:maxLines="2"
         android:ellipsize="end"
+        android:paddingTop="@dimen/padding_l"
+        android:paddingBottom="@dimen/padding_l"
         />
 
     <LinearLayout
@@ -47,9 +49,9 @@
             >
 
             <ImageView
-                android:id="@+id/iv_trending"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/iv_userAvatar"
+                android:layout_width="@dimen/BarreTop_height"
+                android:layout_height="@dimen/BarreTop_height"
                 android:layout_weight="0"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/ic_star_blue"
@@ -87,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:adjustViewBounds="true"
-                app:srcCompat="@drawable/ic_star_blue"
+                app:srcCompat="@drawable/ic_star_black"
                 android:layout_gravity="center"
                 />
 

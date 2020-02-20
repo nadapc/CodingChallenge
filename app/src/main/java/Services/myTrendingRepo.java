@@ -77,11 +77,11 @@ public class myTrendingRepo extends Service {
                     URL url = new URL(mContext.getResources().getString(R.string.environement_url) + "search/repositories?q=created:>"+getCurrentDate()+"&sort=stars&order=desc&page="+pageNumber);
                     myURLConnection = (HttpURLConnection) url.openConnection();
                     myURLConnection.setRequestMethod("GET");
-                    Log.d(TAG, "myTrendingRepo - getReposList - url : " + url);
 
+                    Log.d(TAG,"getReposList url"+url);
                     //Récupération de la réponse
                     int iHttpStatus = myURLConnection.getResponseCode();
-                    Log.d(TAG, "myTrendingRepo - getReposList - iHttpStatus : " + iHttpStatus);
+                    Log.d(TAG,"getReposList iHttpStatus"+iHttpStatus);
 
                     if (iHttpStatus == HttpURLConnection.HTTP_OK ) {
 
@@ -165,7 +165,7 @@ public class myTrendingRepo extends Service {
 
         try {
 
-            JSONObject reader = new JSONObject(sResultJson);
+            JSONObject reader = new JSONObject(sResult);
             JSONArray items = reader.getJSONArray("items");
 
             for (int i=0; i < items.length(); i++) {
@@ -226,15 +226,11 @@ public class myTrendingRepo extends Service {
         return null;
     }
 
-
-
     public static String getCurrentDate() {
 
         Calendar cal=Calendar.getInstance();
         int currentDay=cal.get(Calendar.DAY_OF_MONTH);
-        //Set the date to 2 days ago
         cal.set(Calendar.DAY_OF_MONTH, currentDay-30);
-
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         return dateFormat.format(cal.getTime());
