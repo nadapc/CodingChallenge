@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CodingChallenge</string>
+    <string name="activity_title">Trending Repos</string>
+    <string name="activity_btn_trending">Trending</string>
+    <string name="activity_btn_setting">Settings</string>
+</resources>

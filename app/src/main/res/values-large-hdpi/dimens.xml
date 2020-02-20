@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="line_s">0.5dip</dimen>
+    <dimen name="line_m">1dip</dimen>
+    <dimen name="line_l">2dip</dimen>
+    <dimen name="line_xl">3dip</dimen>
+
+    <dimen name="text_xxs">12dip</dimen>
+    <dimen name="text_xs">13dip</dimen>
+    <dimen name="text_s">14dip</dimen>
+    <dimen name="text_xm">15dip</dimen>
+    <dimen name="text_m">16dip</dimen>
+    <dimen name="text_l">19dip</dimen>
+    <dimen name="text_xl">21dip</dimen>
+    <dimen name="text_xxl">24dip</dimen>
+    <dimen name="text_xxxl">38dip</dimen>
+    <dimen name="texte_web">18dip</dimen>
+
+    <dimen name="padding_xxs">1dip</dimen>
+    <dimen name="padding_xs">2dip</dimen>
+    <dimen name="padding_s">3dip</dimen>
+    <dimen name="padding">6dip</dimen>
+    <dimen name="padding_m">8dip</dimen>
+    <dimen name="padding_l">12dip</dimen>
+    <dimen name="padding_xl">18dip</dimen>
+    <dimen name="padding_xxl">24dip</dimen>
+    <dimen name="padding_xxxl">30dip</dimen>
+    <dimen name="padding_xxxxl">48dip</dimen>
+    <dimen name="padding_xxxxxl">78dip</dimen>
+
+    <dimen name="BarreTop_height">60dip</dimen>
+
+
+</resources>
